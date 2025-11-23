@@ -1,0 +1,10 @@
+/* нужно, чтобы контейнер имел высоту */
+#map {
+  width: 100%;
+  height: 500px;
+}
+
+/* мелкие правки Leaflet-элементов (если надо) */
+.leaflet-container {
+  background: #f5f5f5;
+}
