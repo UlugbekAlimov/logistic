@@ -1,34 +1,43 @@
-<section class="w-full py-16 bg-white">
-  <div
-    class="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
-  >
-    <div *ngIf="isBrowser" id="map" style="height: 500px"></div>
+<section class="w-full py-16 bg-white pb-20">
+  <div class="container mx-auto px-6 lg:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+ 
+      <div class="space-y-6 text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-[#0A5C45] leading-tight">
+          {{ "ABOUT_COMPANY" | translate }}
+        </h2>
 
-    <div class="space-y-6">
-      <h2 class="text-4xl font-bold text-[#0A5C45] leading-tight">
-        Компании Dunyoi Asr
-      </h2>
+        <p class="text-2xl font-semibold text-gray-900">
+          {{ "ABOUT_SERVICE" | translate }}
+        </p>
 
-      <p class="text-2xl font-semibold text-gray-900">Услуга: Грузоперевозки</p>
+        <p
+          class="text-gray-700 leading-relaxed text-lg mx-auto lg:mx-0 max-w-4xl"
+        >
+          {{ "ABOUT_TEXT1" | translate }}
+        </p>
 
-      <p class="text-gray-700 leading-relaxed text-lg">
-        Dunyoi Asr — логистическая компания, специализирующаяся на
-        грузоперевозках, складских услугах и комплексных логистических решениях.
-        Мы обеспечиваем безопасную и своевременную доставку грузов по
-        региональным и международным направлениям, используя современную
-        инфраструктуру и надёжный транспорт.
-      </p>
+        <p
+          class="text-gray-700 leading-relaxed text-lg mx-auto lg:mx-0 max-w-4xl"
+        >
+          {{ "ABOUT_TEXT2" | translate }}
+        </p>
 
-      <p class="text-gray-700 leading-relaxed text-lg">
-        Компания придерживается высоких стандартов качества, прозрачности и
-        ответственности, предоставляя клиентам стабильный сервис и оптимизацию
-        логистических процессов.
-      </p>
+        <p
+          class="text-green-700 leading-relaxed text-xl font-semibold mx-auto lg:mx-0 max-w-4xl"
+        >
+          {{ "ABOUT_TEXT4" | translate }}
+        </p>
+      </div>
 
-      <p class="text-green-700 leading-relaxed text-xl">
-        Dunyoi Asr — ваш надёжный партнёр в мире транспортных и логистических
-        решений.
-      </p>
+ 
+      <div class="flex justify-center">
+        <img
+          src="img/sertificate.png"
+          alt="Иҷозатнома"
+          class="w-full max-w-sm lg:max-w-sm rounded-lg shadow-lg object-cover"
+        />
+      </div>
     </div>
   </div>
 </section>

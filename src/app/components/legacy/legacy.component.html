@@ -7,26 +7,22 @@
         <h2
           class="text-3xl md:text-4xl font-extrabold text-green-900 leading-tight mb-8"
         >
-          НАМ ДОВЕРЯЮТ В СФЕРЕ ГРУЗОПЕРЕВОЗОК
+          {{ "TRUST_TITLE" | translate }}
         </h2>
 
         <p class="text-lg text-gray-700 leading-relaxed mb-10">
-          Мы работаем с клиентами, которым важны стабильность, точность и
-          ответственность. Dunyoi Asr обеспечивает безопасную транспортировку
-          различных типов грузов, контролируя каждый этап — от погрузки до
-          доставки. Благодаря современному подвижному составу, продуманной
-          логистике и чётким стандартам качества, мы подтверждаем доверие
-          партнёров на практике.
+          {{ "TRUST_TEXT" | translate }}
         </p>
 
         <button
+          (click)="openMail()"
           class="bg-green-800 text-white px-10 py-4 text-lg font-semibold tracking-wide hover:bg-green-900 transition"
         >
-          УЗНАТЬ БОЛЬШЕ
+          {{ "TRUST_MORE" | translate }}
         </button>
       </div>
 
-      <!-- RIGHT SIDE -->
+      <!-- RIGHT IMAGE -->
       <div class="flex justify-center items-center">
         <img
           src="img/verify.png"

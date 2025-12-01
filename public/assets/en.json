@@ -1,0 +1,61 @@
+{
+  "ABOUT_US": "About Us",
+  "OUR_PARTNERS": "Our Partners",
+  "CONTACTS": "Contacts",
+  "CONTACT_US": "Contact Us",
+
+  "HERO_TITLE": "Logistics you can trust.",
+  "HERO_SUBTITLE": "Fast cargo delivery",
+  "HERO_BUTTON": "Contact Us",
+
+  "WAREHOUSE_TITLE": "Warehouse",
+  "WAREHOUSE_SUBTITLE": "Warehousing",
+  "WAREHOUSE_TEXT": "Storage and handling of cargo in railway wagons and on specialized sites. Reliable solutions for large shipments.",
+  "WAREHOUSE_MORE": "Learn more →",
+
+  "LOGISTICS_TITLE": "Logistics",
+  "LOGISTICS_TEXT": "Container transportation and cargo flow management. Optimal delivery schemes for any volume.",
+  "LOGISTICS_MORE": "Learn more →",
+
+  "TRANSPORT_TITLE": "Transport",
+  "TRANSPORT_TEXT": "Rail transportation across regional and interregional routes. Own traction equipment and precise delivery times.",
+  "TRANSPORT_MORE": "Learn more →",
+
+  "ABOUT_COMPANY": "Dunyoi Asr Company",
+  "ABOUT_SERVICE": "Service: Freight Transportation",
+  "ABOUT_TEXT1": "Dunyoi Asr is a logistics company specializing in freight transportation, warehouse services, and integrated logistics solutions.",
+  "ABOUT_TEXT2": "We ensure safe and timely delivery of cargo across regional and international routes.",
+  "ABOUT_TEXT3": "The company adheres to high standards of quality, transparency, and responsibility.",
+  "ABOUT_TEXT4": "Dunyoi Asr is your reliable partner in the world of transport and logistics solutions.",
+
+  "WAREHOUSE_SOLUTIONS": "WAREHOUSE SOLUTIONS",
+  "OPT_STORAGE": "Bulk storage",
+  "CLIMATE_CONTROL": "Climate-controlled storage",
+  "RACK_STORAGE": "Rack storage",
+  "ORGANIC_PROCESSING": "Organic processing",
+  "FOOD_GRADE": "Food-grade storage",
+  "OPEN_AREAS": "Open areas",
+
+  "LOGISTIC_SOLUTIONS": "LOGISTIC SOLUTIONS",
+  "OWN_TRANSPORT": "Own transport",
+  "RAIL_SUPPLY": "Rail delivery",
+  "CONTRACT_PACKAGING": "Contract packaging",
+
+  "TRUST_TITLE": "TRUSTED IN FREIGHT TRANSPORTATION",
+  "TRUST_TEXT": "We work with clients who value stability, precision, and responsibility.",
+  "TRUST_MORE": "Learn more",
+
+  "CTA_TITLE1": "READY TO MOVE",
+  "CTA_TITLE2": "YOUR BUSINESS FORWARD?",
+
+  "HQ": "Headquarters",
+  "TAJIKISTAN": "Tajikistan",
+  "ADDRESS": "Sugd Region, B. Gafurov, Industrial Zone",
+  "PHONE": "+992 (00) 000-00-00",
+  "GET_OFFER": "Get a Quote",
+  "EMAIL": "dunyoiasr@mail.ru",
+
+  "FOOTER_COPYRIGHT": "© 2025 Logistics Company",
+  "PRIVACY_POLICY": "Privacy Policy",
+  "ACCESSIBILITY_POLICY": "Accessibility Policy"
+}

@@ -1,27 +1,58 @@
 <nav class="w-full bg-white shadow">
-  <div class="container mx-auto px-6 lg:px-20 py-4 flex justify-between items-center">
-
+  <div
+    class="container mx-auto px-6 lg:px-20 py-4 flex justify-between items-center"
+  >
     <img class="w-28 md:w-32" src="img/logo.png" alt="logo" />
 
+    <!-- Desktop menu -->
     <ul class="hidden md:flex items-center gap-10">
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        О нас
+      <li
+        (click)="scrollTo('about')"
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "ABOUT_US" | translate }}
       </li>
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        Наши партнёры
-      </li>
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        Контакты
+      <!-- <li
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "OUR_PARTNERS" | translate }}
+      </li> -->
+      <li
+        (click)="scrollTo('contacts')"
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "CONTACTS" | translate }}
       </li>
     </ul>
 
-    <button
-      class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg 
-      hover:bg-green-700 transition duration-300 hover:scale-105"
-    >
-      Связаться с нами
-    </button>
+    <div class="flex justify-center items-center gap-3">
+      <button
+        (click)="openMail()"
+        class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300 hover:scale-105"
+      >
+        {{ "CONTACT_US" | translate }}
+      </button>
 
+      <button
+        (click)="translateText('ru')"
+        aria-label="Сменить язык на русский"
+        title="Русский"
+        class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300 hover:scale-105"
+      >
+        Ру
+      </button>
+
+      <button
+        (click)="translateText('en')"
+        aria-label="Switch language to English"
+        title="English"
+        class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300 hover:scale-105"
+      >
+        En
+      </button>
+    </div>
+
+    <!-- Burger -->
     <button
       class="md:hidden cursor-pointer flex flex-col gap-1"
       (click)="toggleMenu()"
@@ -30,30 +61,38 @@
       <span class="w-7 h-1 bg-black"></span>
       <span class="w-7 h-1 bg-black"></span>
     </button>
-
   </div>
 
+  <!-- Mobile menu -->
   <div
     class="md:hidden border-t bg-white overflow-hidden transition-all duration-300"
     [class.max-h-0]="!mobileOpen"
     [class.max-h-96]="mobileOpen"
   >
     <ul class="flex flex-col items-start px-6 py-4 gap-4">
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        О нас
+      <li
+        (click)="scrollTo('about')"
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "ABOUT_US" | translate }}
       </li>
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        Наши партнёры
-      </li>
-      <li class="text-xl font-semibold hover:text-green-600 cursor-pointer transition">
-        Контакты
+      <!-- <li
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "OUR_PARTNERS" | translate }}
+      </li> -->
+      <li
+        (click)="scrollTo('contacts')"
+        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+      >
+        {{ "CONTACTS" | translate }}
       </li>
 
       <button
-        class="w-full mt-2 px-5 py-2 font-semibold bg-green-800 text-white text-lg 
-        hover:bg-green-700 transition duration-300"
+        (click)="openMail()"
+        class="w-full mt-2 px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300"
       >
-        Связаться с нами
+        {{ "CONTACT_US" | translate }}
       </button>
     </ul>
   </div>
