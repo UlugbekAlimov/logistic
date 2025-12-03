@@ -1,25 +1,56 @@
-<div class="relative w-full">
-  <img
-    src="img/truck.jpg"
-    alt="banner"
-    class="w-full h-[260px] sm:h-[340px] md:h-[480px] object-cover"
-  />
+<div class="relative w-full overflow-hidden">
 
   <div
-    class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-20"
+    class="flex transition-transform duration-500"
+    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
   >
-    <h1
-      class="text-white font-extrabold text-2xl sm:text-3xl md:text-5xl leading-tight max-w-xs sm:max-w-lg md:max-w-3xl"
-    >
-      {{ "HERO_TITLE" | translate }} <br />
-      {{ "HERO_SUBTITLE" | translate }}
-    </h1>
+    <div class="w-full flex-shrink-0" *ngFor="let slide of slides">
+      <div class="relative w-full">
+        <img
+          [src]="slide.img"
+          class="w-full h-[260px] sm:h-[340px] md:h-[480px] object-cover"
+        />
 
-    <a
-      (click)="openMail()"
-      class="mt-6 inline-flex items-center justify-center bg-green-800 hover:bg-green-700 text-white font-semibold px-8 py-3 text-lg tracking-wide shadow-lg hover:scale-105 transition-all duration-300 max-w-fit"
-    >
-      {{ "CONTACT_US" | translate }}
-    </a>
+        <div
+          class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-20 pointer-events-none"
+        >
+          <h1
+            class="text-white font-extrabold text-2xl sm:text-3xl md:text-5xl pointer-events-none max-w-xs sm:max-w-lg md:max-w-3xl"
+          >
+            {{ slide.title | translate }} <br />
+            {{ slide.subtitle | translate }}
+          </h1>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <a
+    (click)="openMail()"
+    class="absolute left-6 bottom-6 bg-green-800 hover:bg-green-700 text-white font-semibold px-8 py-3 text-lg shadow-lg hover:scale-105 transition-all duration-300 z-30"
+  >
+    {{ "CONTACT_US" | translate }}
+  </a>
+
+  
+  <div
+    #swipeLayer
+    class="absolute inset-0 z-20"
+    style="touch-action: pan-y"
+  ></div>
+
+  
+  <button
+    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-30"
+    (click)="prev()"
+  >
+    ‹
+  </button>
+
+  <button
+    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-30"
+    (click)="next()"
+  >
+    ›
+  </button>
 </div>
