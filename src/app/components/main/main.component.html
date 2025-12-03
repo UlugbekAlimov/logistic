@@ -12,43 +12,41 @@
         />
 
         <div
-          class="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-20 pointer-events-none"
+          class="absolute inset-0 flex flex-col justify-end pb-10 px-6 sm:px-10 md:px-20 z-30"
         >
           <h1
-            class="text-white font-extrabold text-2xl sm:text-3xl md:text-5xl pointer-events-none max-w-xs sm:max-w-lg md:max-w-3xl"
+            class="text-white font-extrabold text-2xl sm:text-3xl md:text-5xl leading-[1.15] sm:leading-[1.18] md:leading-[1.20] max-w-xs sm:max-w-lg md:max-w-3xl pointer-events-none"
           >
             {{ slide.title | translate }} <br />
             {{ slide.subtitle | translate }}
           </h1>
+
+          <a
+            (click)="openMail()"
+            class="mt-6 bg-green-800 hover:bg-green-700 text-white font-semibold px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg shadow-lg rounded w-fit relative z-50 pointer-events-auto cursor-pointer"
+          >
+            {{ "CONTACT_US" | translate }}
+          </a>
         </div>
       </div>
     </div>
   </div>
 
-  <a
-    (click)="openMail()"
-    class="absolute left-6 bottom-6 bg-green-800 hover:bg-green-700 text-white font-semibold px-8 py-3 text-lg shadow-lg hover:scale-105 transition-all duration-300 z-30"
-  >
-    {{ "CONTACT_US" | translate }}
-  </a>
-
-  
   <div
     #swipeLayer
-    class="absolute inset-0 z-20"
+    class="absolute inset-0 z-20 pointer-events-auto md:pointer-events-none"
     style="touch-action: pan-y"
   ></div>
 
-  
   <button
-    class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-30"
+    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-50"
     (click)="prev()"
   >
     ‹
   </button>
 
   <button
-    class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-30"
+    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-50"
     (click)="next()"
   >
     ›

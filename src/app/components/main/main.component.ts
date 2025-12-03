@@ -4,24 +4,20 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css',
 })
 export class MainComponent implements AfterViewInit, OnDestroy {
   @ViewChild('swipeLayer') swipeLayer!: ElementRef;
-
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   currentIndex = 0;
 
@@ -31,7 +27,23 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     { img: 'img/banner3.png', title: 'HERO_TITLE', subtitle: 'HERO_SUBTITLE' },
   ];
 
-  autoInterval: any;
+  private startX = 0;
+  private currentX = 0;
+  private isDragging = false;
+  private autoplay: any;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+
+  ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.initSwipe();
+    this.startAutoplay();
+  }
+
+  ngOnDestroy() {
+    if (this.autoplay) clearInterval(this.autoplay);
+  }
 
   next() {
     this.currentIndex =
@@ -43,64 +55,35 @@ export class MainComponent implements AfterViewInit, OnDestroy {
       this.currentIndex === 0 ? this.slides.length - 1 : this.currentIndex - 1;
   }
 
-  ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.initSwipe();
-      this.startAutoSwipe();
-    }
+  openMail() {
+    window.open('mailto:dunyoiasr@mail.ru', '_blank');
   }
 
-  ngOnDestroy() {
-    if (isPlatformBrowser(this.platformId)) {
-      clearInterval(this.autoInterval);
-    }
+  startAutoplay() {
+    this.autoplay = setInterval(() => this.next(), 4000);
   }
-
-  startAutoSwipe() {
-    this.autoInterval = setInterval(() => {
-      this.next();
-    }, 4000);
-  }
-
-  stopAutoSwipeTemporarily() {
-    clearInterval(this.autoInterval);
-    setTimeout(() => this.startAutoSwipe(), 4000);
-  }
-
-  // ------------------------
-  // SWIPE LOGIC
-  // ------------------------
-  private startX = 0;
-  private currentX = 0;
-  private isDragging = false;
 
   initSwipe() {
-    const el = this.swipeLayer.nativeElement;
+    const layer = this.swipeLayer.nativeElement;
 
-    el.addEventListener('touchstart', (e: TouchEvent) => {
+    layer.addEventListener('touchstart', (e: TouchEvent) => {
       this.startX = e.touches[0].clientX;
       this.isDragging = true;
-      this.stopAutoSwipeTemporarily();
     });
 
-    el.addEventListener('touchmove', (e: TouchEvent) => {
+    layer.addEventListener('touchmove', (e: TouchEvent) => {
       if (!this.isDragging) return;
       this.currentX = e.touches[0].clientX;
     });
 
-    el.addEventListener('touchend', () => {
+    layer.addEventListener('touchend', () => {
       if (!this.isDragging) return;
 
       const diff = this.startX - this.currentX;
-
       if (diff > 50) this.next();
       else if (diff < -50) this.prev();
 
       this.isDragging = false;
     });
-  }
-
-  openMail() {
-    window.open('mailto:dunyoiasr@mail.ru', '_blank');
   }
 }
