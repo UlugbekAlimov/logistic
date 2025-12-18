@@ -23,19 +23,19 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
   slides = [
     {
-      img: 'img/truck.jpg',
+      img: 'img/truck.avif',
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Long-haul truck driving on the highway',
     },
     {
-      img: 'img/banner2.png',
+      img: 'img/banner2.avif',
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Warehouse worker loading a truck trailer',
     },
     {
-      img: 'img/banner3.png',
+      img: 'img/banner3.avif',
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Logistics team overseeing freight operations',
