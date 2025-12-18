@@ -22,9 +22,24 @@ export class MainComponent implements AfterViewInit, OnDestroy {
   currentIndex = 0;
 
   slides = [
-    { img: 'img/truck.jpg', title: 'HERO_TITLE', subtitle: 'HERO_SUBTITLE' },
-    { img: 'img/banner2.png', title: 'HERO_TITLE', subtitle: 'HERO_SUBTITLE' },
-    { img: 'img/banner3.png', title: 'HERO_TITLE', subtitle: 'HERO_SUBTITLE' },
+    {
+      img: 'img/truck.jpg',
+      title: 'HERO_TITLE',
+      subtitle: 'HERO_SUBTITLE',
+      alt: 'Long-haul truck driving on the highway',
+    },
+    {
+      img: 'img/banner2.png',
+      title: 'HERO_TITLE',
+      subtitle: 'HERO_SUBTITLE',
+      alt: 'Warehouse worker loading a truck trailer',
+    },
+    {
+      img: 'img/banner3.png',
+      title: 'HERO_TITLE',
+      subtitle: 'HERO_SUBTITLE',
+      alt: 'Logistics team overseeing freight operations',
+    },
   ];
 
   private startX = 0;

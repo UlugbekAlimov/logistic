@@ -6,27 +6,34 @@
 
     <!-- Desktop menu -->
     <ul class="hidden md:flex items-center gap-10">
-      <li
-        (click)="scrollTo('about')"
-        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
-      >
-        {{ "ABOUT_US" | translate }}
+      <li>
+        <button
+          type="button"
+          (click)="scrollTo('about')"
+          class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+        >
+          {{ "ABOUT_US" | translate }}
+        </button>
       </li>
       <!-- <li
         class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
       >
         {{ "OUR_PARTNERS" | translate }}
       </li> -->
-      <li
-        (click)="scrollTo('contacts')"
-        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
-      >
-        {{ "CONTACTS" | translate }}
+      <li>
+        <button
+          type="button"
+          (click)="scrollTo('contacts')"
+          class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+        >
+          {{ "CONTACTS" | translate }}
+        </button>
       </li>
     </ul>
 
     <div class="flex justify-center items-center gap-3">
       <button
+        type="button"
         (click)="openMail()"
         class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300 hover:scale-105"
       >
@@ -34,15 +41,17 @@
       </button>
 
       <button
+        type="button"
         (click)="translateText('ru')"
-        aria-label="Сменить язык на русский"
-        title="Русский"
+        aria-label="Switch language to Russian"
+        title="Russian"
         class="hidden md:block px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300 hover:scale-105"
       >
-        Ру
+        Ru
       </button>
 
       <button
+        type="button"
         (click)="translateText('en')"
         aria-label="Switch language to English"
         title="English"
@@ -54,8 +63,12 @@
 
     <!-- Burger -->
     <button
+      type="button"
       class="md:hidden cursor-pointer flex flex-col gap-1"
       (click)="toggleMenu()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="mobileOpen"
+      aria-controls="mobile-menu"
     >
       <span class="w-7 h-1 bg-black"></span>
       <span class="w-7 h-1 bg-black"></span>
@@ -65,35 +78,45 @@
 
   <!-- Mobile menu -->
   <div
+    id="mobile-menu"
     class="md:hidden border-t bg-white overflow-hidden transition-all duration-300"
     [class.max-h-0]="!mobileOpen"
     [class.max-h-96]="mobileOpen"
   >
     <ul class="flex flex-col items-start px-6 py-4 gap-4">
-      <li
-        (click)="scrollTo('about')"
-        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
-      >
-        {{ "ABOUT_US" | translate }}
+      <li>
+        <button
+          type="button"
+          (click)="scrollTo('about')"
+          class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+        >
+          {{ "ABOUT_US" | translate }}
+        </button>
       </li>
       <!-- <li
         class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
       >
         {{ "OUR_PARTNERS" | translate }}
       </li> -->
-      <li
-        (click)="scrollTo('contacts')"
-        class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
-      >
-        {{ "CONTACTS" | translate }}
+      <li>
+        <button
+          type="button"
+          (click)="scrollTo('contacts')"
+          class="text-xl font-semibold hover:text-green-600 cursor-pointer transition"
+        >
+          {{ "CONTACTS" | translate }}
+        </button>
       </li>
 
-      <button
-        (click)="openMail()"
-        class="w-full mt-2 px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300"
-      >
-        {{ "CONTACT_US" | translate }}
-      </button>
+      <li class="w-full">
+        <button
+          type="button"
+          (click)="openMail()"
+          class="w-full mt-2 px-5 py-2 font-semibold bg-green-800 text-white text-lg hover:bg-green-700 transition duration-300"
+        >
+          {{ "CONTACT_US" | translate }}
+        </button>
+      </li>
     </ul>
   </div>
 </nav>

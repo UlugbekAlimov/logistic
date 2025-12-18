@@ -3,13 +3,13 @@
     class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10"
   >
     <div class="flex items-center gap-4">
-      <img src="img/logo.png" alt="Логотип" class="h-20 object-contain" />
+      <img src="img/logo.png" alt="Company logo" class="h-20 object-contain" />
     </div>
 
     <div class="text-center lg:text-left">
-      <h3 class="text-lg font-semibold text-gray-900">
+      <h2 class="text-lg font-semibold text-gray-900">
         {{ "HQ" | translate }}
-      </h3>
+      </h2>
 
       <p class="text-gray-700">
         {{ "TAJIKISTAN" | translate }}
@@ -40,6 +40,7 @@
       </button> -->
 
       <button
+        type="button"
         (click)="openMail()"
         class="px-5 cursor-pointer py-2 border border-green-800 text-green-900 hover:bg-green-900 hover:text-white transition break-all"
       >
@@ -54,15 +55,16 @@
     class="max-w-7xl mx-auto px-6 mt-6 flex flex-col lg:flex-row items-center justify-between gap-4"
   >
     <p class="text-gray-600 text-sm text-center lg:text-left leading-snug">
-      © 2025 Logistics Company |
+      (c) 2025 Logistics Company |
       <a routerLink="/policy">{{ "PRIVACY_POLICY" | translate }}</a>
     </p>
 
     <div class="flex gap-4 mt-2 lg:mt-0">
       <a
         class="text-green-900 hover:opacity-60 transition"
-        href="#"
+        href="mailto:dunyoiasr@mail.ru"
         target="_blank"
+        aria-label="Send us an email"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

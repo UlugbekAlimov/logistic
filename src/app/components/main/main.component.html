@@ -8,6 +8,7 @@
       <div class="relative w-full">
         <img
           [src]="slide.img"
+          [attr.alt]="slide.alt"
           class="w-full h-[260px] sm:h-[340px] md:h-[480px] object-cover"
         />
 
@@ -39,16 +40,20 @@
   ></div>
 
   <button
+    type="button"
     class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-50"
     (click)="prev()"
+    aria-label="Previous slide"
   >
-    ‹
+    <span aria-hidden="true">&lt;</span>
   </button>
 
   <button
+    type="button"
     class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-50"
     (click)="next()"
+    aria-label="Next slide"
   >
-    ›
+    <span aria-hidden="true">&gt;</span>
   </button>
 </div>
