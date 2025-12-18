@@ -9,6 +9,10 @@
         <img
           [src]="slide.img"
           [attr.alt]="slide.alt"
+          [attr.width]="slide.width"
+          [attr.height]="slide.height"
+          [attr.fetchpriority]="slide === slides[0] ? 'high' : null"
+          [attr.loading]="slide === slides[0] ? 'eager' : 'lazy'"
           class="w-full h-[260px] sm:h-[340px] md:h-[480px] object-cover"
         />
 

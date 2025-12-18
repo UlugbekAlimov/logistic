@@ -27,18 +27,24 @@ export class MainComponent implements AfterViewInit, OnDestroy {
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Long-haul truck driving on the highway',
+      width: 1920,
+      height: 1080,
     },
     {
       img: 'img/banner2.avif',
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Warehouse worker loading a truck trailer',
+      width: 1920,
+      height: 1080,
     },
     {
       img: 'img/banner3.avif',
       title: 'HERO_TITLE',
       subtitle: 'HERO_SUBTITLE',
       alt: 'Logistics team overseeing freight operations',
+      width: 1920,
+      height: 1080,
     },
   ];
 
